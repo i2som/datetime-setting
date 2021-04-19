@@ -5,6 +5,10 @@
 #include <QTimer>
 #include <QDateTime>
 
+#include <QDebug>
+#include <QScreen>
+#include <QResizeEvent>
+
 namespace Ui {
 class MainWindow;
 }
@@ -19,6 +23,9 @@ public:
     QTimer *timer;
     QDateTime rtc_time;
     bool change_time_flag;
+
+protected:
+    void resizeEvent(QResizeEvent *event);
 
 private slots:
     void time_update();
